@@ -3,7 +3,8 @@ mediainfo_props
 
 MediaInfo plugin for KDE file properties dialog
 
-Install
-=======
+##Install
+```
 $ cmake
 $ make install
+```
