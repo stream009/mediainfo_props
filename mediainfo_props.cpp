@@ -2,15 +2,15 @@
 
 #include "mediainfo_widget.hpp"
 
+#include <QtCore/QDebug>
+
 #include <kdemacros.h>
-#include <KDebug>
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginLoader>
 
 K_PLUGIN_FACTORY(MediaInfoPropsPluginFactory,
                  registerPlugin<MediaInfoPropsPlugin>();)
-K_EXPORT_PLUGIN(MediaInfoPropsPluginFactory("mediainfo props"))
 
 MediaInfoPropsPlugin::
 MediaInfoPropsPlugin(QObject *parent, const QList<QVariant> &)
@@ -32,9 +32,11 @@ MediaInfoPropsPlugin(QObject *parent, const QList<QVariant> &)
         this->properties->addPage(edit, i18nc("@title:tab", "MediaInfo"));
     }
     catch (const std::exception &e) {
-        kDebug() << "Exception: " << e.what();
+        qDebug() << "Exception: " << e.what();
     }
     catch (...) {
-        kDebug() << "Unknown exception has caught.";
+        qDebug() << "Unknown exception has caught.";
     }
 }
+
+#include <mediainfo_props.moc>

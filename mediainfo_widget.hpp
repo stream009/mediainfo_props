@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include <QtGui/QTextEdit>
+#include <QtWidgets/QTextEdit>
 
 #include <MediaInfoDLL/MediaInfoDLL.h>
 
