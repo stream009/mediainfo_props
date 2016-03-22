@@ -4,6 +4,7 @@ project(mediainfo_props)
 find_package(ECM REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
+set(KDE_INSTALL_USE_QT_SYS_PATHS On)
 include(KDEInstallDirs)
 include(KDECompilerSettings)
 include(KDECMakeSettings)
